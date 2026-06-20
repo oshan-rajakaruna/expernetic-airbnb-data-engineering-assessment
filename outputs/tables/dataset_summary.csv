@@ -1,0 +1,5 @@
+dataset,rows,columns,duplicate_rows,missing_cells,total_cells,missing_percentage
+listings,10480,79,0,86045,827920,10.39
+calendar,3825200,7,0,7650400,26776400,28.57
+reviews,501084,6,0,32,3006504,0.0
+neighbourhoods,22,2,0,22,44,50.0

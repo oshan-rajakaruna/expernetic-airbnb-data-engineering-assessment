@@ -1,0 +1,97 @@
+dataset,column_name,data_type,non_null_count,null_count,null_percentage,unique_count,sample_value
+listings,id,int64,10480,0,0.0,10480,27886
+listings,listing_url,str,10480,0,0.0,10480,https://www.airbnb.com/rooms/27886
+listings,scrape_id,int64,10480,0,0.0,1,20250911031321
+listings,last_scraped,str,10480,0,0.0,1,2025-09-11
+listings,source,str,10480,0,0.0,2,city scrape
+listings,name,str,10480,0,0.0,10186,"Romantic, stylish B&B houseboat in canal district"
+listings,description,str,10132,348,3.32,9813,"Stylish and romantic houseboat on fantastic historic location with breathtaking view.  Wheelhouse, deckhouse and captains room. Central, quiet. Great breakfast, 2 vanMoof design bikes and a Canadian Canoe are included. Just read the reviews on tripadvisor for instance!"
+listings,neighborhood_overview,str,5192,5288,50.46,4846,"Central, quiet, safe, clean and beautiful."
+listings,picture_url,str,10480,0,0.0,10396,https://a0.muscache.com/pictures/02c2da9d-660e-451d-8a51-2f7a17469df7.jpg
+listings,host_id,int64,10480,0,0.0,9201,97647
+listings,host_url,str,10480,0,0.0,9201,https://www.airbnb.com/users/show/97647
+listings,host_name,str,10477,3,0.03,3857,Flip
+listings,host_since,str,10477,3,0.03,3589,2010-03-23
+listings,host_location,str,9248,1232,11.76,219,"Amsterdam, Netherlands"
+listings,host_about,str,5510,4970,47.42,4570,"Marjan works in ""eye"" the dutch filmmuseum, and designs costumes for tv, film and theatre. Flip is an actor, mainly on stage, but also for film and tv. So for cultural advise, what to do, you are coming to the right place...
+
+"
+listings,host_response_time,str,6683,3797,36.23,4,within an hour
+listings,host_response_rate,str,6683,3797,36.23,64,100%
+listings,host_acceptance_rate,str,8050,2430,23.19,101,97%
+listings,host_is_superhost,str,10365,115,1.1,2,t
+listings,host_thumbnail_url,str,10477,3,0.03,9058,https://a0.muscache.com/im/users/97647/profile_pic/1273275077/original.jpg?aki_policy=profile_small
+listings,host_picture_url,str,10477,3,0.03,9058,https://a0.muscache.com/im/users/97647/profile_pic/1273275077/original.jpg?aki_policy=profile_x_medium
+listings,host_neighbourhood,str,2790,7690,73.38,72,Westelijke Eilanden
+listings,host_listings_count,float64,10477,3,0.03,38,1.0
+listings,host_total_listings_count,float64,10477,3,0.03,52,1.0
+listings,host_verifications,str,10477,3,0.03,7,"['email', 'phone']"
+listings,host_has_profile_pic,str,10477,3,0.03,2,t
+listings,host_identity_verified,str,10477,3,0.03,2,t
+listings,neighbourhood,str,5192,5288,50.46,41,"Amsterdam, North Holland, Netherlands"
+listings,neighbourhood_cleansed,str,10480,0,0.0,22,Centrum-West
+listings,neighbourhood_group_cleansed,float64,0,10480,100.0,0,
+listings,latitude,float64,10480,0,0.0,7583,52.38761
+listings,longitude,float64,10480,0,0.0,8616,4.89188
+listings,property_type,str,10480,0,0.0,63,Private room in houseboat
+listings,room_type,str,10480,0,0.0,4,Private room
+listings,accommodates,int64,10480,0,0.0,14,2
+listings,bathrooms,float64,5932,4548,43.4,15,1.5
+listings,bathrooms_text,str,10468,12,0.11,24,1.5 baths
+listings,bedrooms,float64,10174,306,2.92,11,1.0
+listings,beds,float64,5904,4576,43.66,22,1.0
+listings,amenities,str,10480,0,0.0,10059,"[""Canal view"", ""Coffee"", ""Private backyard \u2013 Not fully fenced"", ""Bikes"", ""Portable fans"", ""Books and reading material"", ""Fast wifi \u2013 245 Mbps"", ""Hangers"", ""Paid street parking off premises"", ""Shower gel"", ""Breakfast"", ""Wine glasses"", ""Dining table"", ""Private living room"", ""Hot water"", ""Bed linens"", ""TV with standard cable"", ""Heating - split type ductless system"", ""Long term stays allowed"", ""Central heating"", ""Self check-in"", ""Private patio or balcony"", ""City skyline view"", ""Shampoo"", ""Kayak"", ""Fire extinguisher"", ""Luggage dropoff allowed"", ""Outdoor dining area"", ""Hp neutral, eco friendly body soap"", ""Garden view"", ""Laundromat nearby"", ""Air conditioning"", ""Lake access"", ""Smart lock"", ""Dedicated workspace"", ""Boat slip"", ""Mini fridge"", ""Harbor view"", ""Hair dryer"", ""Private entrance"", ""Carbon monoxide alarm"", ""Coffee maker: Nespresso"", ""Safe"", ""Extra pillows and blankets"", ""Smoke alarm"", ""Refrigerator"", ""Essentials"", ""Outdoor furniture"", ""Waterfront"", ""Clothing storage: closet""]"
+listings,price,str,5874,4606,43.95,663,$132.00
+listings,minimum_nights,int64,10480,0,0.0,55,3
+listings,maximum_nights,int64,10480,0,0.0,117,356
+listings,minimum_minimum_nights,float64,10476,4,0.04,48,3.0
+listings,maximum_minimum_nights,float64,10476,4,0.04,55,3.0
+listings,minimum_maximum_nights,float64,10476,4,0.04,113,30.0
+listings,maximum_maximum_nights,float64,10476,4,0.04,115,30.0
+listings,minimum_nights_avg_ntm,float64,10480,0,0.0,176,3.0
+listings,maximum_nights_avg_ntm,float64,10480,0,0.0,315,30.0
+listings,calendar_updated,float64,0,10480,100.0,0,
+listings,has_availability,str,10137,343,3.27,1,t
+listings,availability_30,int64,10480,0,0.0,31,2
+listings,availability_60,int64,10480,0,0.0,61,5
+listings,availability_90,int64,10480,0,0.0,91,16
+listings,availability_365,int64,10480,0,0.0,366,17
+listings,calendar_last_scraped,str,10480,0,0.0,1,2025-09-11
+listings,number_of_reviews,int64,10480,0,0.0,573,311
+listings,number_of_reviews_ltm,int64,10480,0,0.0,149,33
+listings,number_of_reviews_l30d,int64,10480,0,0.0,34,3
+listings,availability_eoy,int64,10480,0,0.0,113,17
+listings,number_of_reviews_ly,int64,10480,0,0.0,143,26
+listings,estimated_occupancy_l365d,int64,10480,0,0.0,96,255
+listings,estimated_revenue_l365d,float64,5874,4606,43.95,2636,33660.0
+listings,first_review,str,9383,1097,10.47,2970,2012-01-09
+listings,last_review,str,9383,1097,10.47,1403,2025-09-07
+listings,review_scores_rating,float64,9383,1097,10.47,117,4.92
+listings,review_scores_accuracy,float64,9383,1097,10.47,109,4.9
+listings,review_scores_cleanliness,float64,9382,1098,10.48,141,4.94
+listings,review_scores_checkin,float64,9383,1097,10.47,104,4.95
+listings,review_scores_communication,float64,9383,1097,10.47,99,4.93
+listings,review_scores_location,float64,9383,1097,10.47,109,4.9
+listings,review_scores_value,float64,9383,1097,10.47,143,4.78
+listings,license,str,10361,119,1.14,9080,0363 974D 4986 7411 88D8
+listings,instant_bookable,str,10480,0,0.0,2,f
+listings,calculated_host_listings_count,int64,10480,0,0.0,17,1
+listings,calculated_host_listings_count_entire_homes,int64,10480,0,0.0,17,0
+listings,calculated_host_listings_count_private_rooms,int64,10480,0,0.0,14,1
+listings,calculated_host_listings_count_shared_rooms,int64,10480,0,0.0,7,0
+listings,reviews_per_month,float64,9383,1097,10.47,687,1.87
+calendar,listing_id,int64,3825200,0,0.0,10480,538723
+calendar,date,str,3825200,0,0.0,365,2025-09-11
+calendar,available,str,3825200,0,0.0,2,f
+calendar,price,float64,0,3825200,100.0,0,
+calendar,adjusted_price,float64,0,3825200,100.0,0,
+calendar,minimum_nights,int64,3825200,0,0.0,59,5
+calendar,maximum_nights,int64,3825200,0,0.0,290,30
+reviews,listing_id,int64,501084,0,0.0,9383,839610
+reviews,id,int64,501084,0,0.0,501084,33387684
+reviews,date,str,501084,0,0.0,5020,2015-05-27
+reviews,reviewer_id,int64,501084,0,0.0,482081,32412055
+reviews,reviewer_name,str,501083,1,0.0,66267,Giuseppe
+reviews,comments,str,501053,31,0.01,487478,Nice time in nice place! Close to city center! Good accomodation
+neighbourhoods,neighbourhood_group,float64,0,22,100.0,0,
+neighbourhoods,neighbourhood,str,22,0,0.0,22,Bijlmer-Centrum
