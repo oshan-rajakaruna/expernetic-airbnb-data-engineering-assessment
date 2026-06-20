@@ -1,0 +1,11 @@
+table_name,row_count
+listings_clean,10480
+calendar_summary,10480
+reviews_clean,501084
+review_summary,9383
+listing_master,10480
+dim_listing,10480
+dim_host,9201
+dim_neighbourhood,22
+fact_listing_market,10480
+fact_reviews,501084
