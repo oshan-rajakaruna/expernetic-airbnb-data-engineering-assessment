@@ -1,0 +1,6 @@
+file_name,relative_path,exists,file_size_mb,status
+listings.csv.gz,data\raw\listings.csv.gz,True,5.65,available
+calendar.csv.gz,data\raw\calendar.csv.gz,True,8.39,available
+reviews.csv.gz,data\raw\reviews.csv.gz,True,58.95,available
+neighbourhoods.csv,data\raw\neighbourhoods.csv,True,0.0,available
+neighbourhoods.geojson,data\raw\neighbourhoods.geojson,True,0.18,available
