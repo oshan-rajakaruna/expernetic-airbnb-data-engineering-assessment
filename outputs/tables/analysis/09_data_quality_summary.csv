@@ -1,0 +1,9 @@
+check_name,value,notes
+Listings with missing price,4606,These records are excluded from price-based analysis.
+Listings with non-positive price,0,Prices should be positive for meaningful market analysis.
+Duplicate listing IDs,0,Listing ID is expected to be unique in listings.
+Calendar records with missing price,3825200,Calendar price is unavailable in this dataset; calendar is used for availability analysis only.
+Calendar records with missing availability,0,Availability is required for occupancy proxy calculations.
+Reviews with missing listing ID,0,Reviews require listing_id to link back to listings.
+Listings without calendar summary,0,These listings did not match calendar records.
+Listings without review summary,1097,These listings have no review records in the reviews file.
