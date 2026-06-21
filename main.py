@@ -12,6 +12,7 @@ PIPELINE_STEPS = [
     ("SQL market analysis", "src/run_analysis.py"),
     ("EDA visual generation", "src/generate_visuals.py"),
     ("Statistical analysis", "src/statistical_analysis.py"),
+    ("Power BI dataset export", "src/export_powerbi_data.py"),
 ]
 
 

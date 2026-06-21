@@ -1,0 +1,11 @@
+check_name,issue_count,status
+duplicate_listing_ids,0,pass
+missing_listing_prices,4606,warning_expected
+non_positive_prices,0,pass
+missing_room_type,0,pass
+invalid_coordinates,0,pass
+listings_without_calendar_summary,0,pass
+listings_without_review_summary,1097,warning_expected
+calendar_records_missing_price,10480,warning_expected
+invalid_availability_rate,0,pass
+reviews_missing_listing_id,0,pass
