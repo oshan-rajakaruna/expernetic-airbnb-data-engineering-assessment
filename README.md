@@ -6,6 +6,8 @@ This project was completed as part of the Expernetic Data Engineer Intern techni
 
 The project transforms raw Airbnb market data into cleaned, validated, analytics-ready datasets and generates business insights related to listing supply, pricing, availability, host behavior, review activity, and neighbourhood-level market patterns.
 
+An optional Power BI dashboard was also created to present the pipeline outputs through executive, demand/revenue proxy, and data quality monitoring views.
+
 ## Objectives
 
 * Understand and profile the raw Inside Airbnb dataset.
@@ -15,11 +17,13 @@ The project transforms raw Airbnb market data into cleaned, validated, analytics
 * Design a simple dimensional model with dimension and fact tables.
 * Run data quality checks and document known limitations.
 * Generate SQL analysis outputs, visualizations, and statistical test results.
+* Export curated datasets for Power BI dashboarding.
+* Create a Power BI dashboard using pipeline outputs for business stakeholder exploration.
 * Provide a reproducible project structure with clear execution steps.
 
 ## Dataset
 
-Source: Inside Airbnb public dataset.
+Source: Inside Airbnb public dataset for Amsterdam, North Holland, The Netherlands.
 
 Selected files:
 
@@ -44,6 +48,8 @@ Listing-level price from the listings file was used for price analysis, while ca
 
 The occupancy proxy is calculated using unavailable days divided by total calendar days. This should not be interpreted as confirmed occupancy because unavailable dates may include booked dates, blocked dates, or host restrictions.
 
+Estimated revenue proxy is derived using listing-level price and occupancy proxy. It should not be interpreted as actual confirmed revenue.
+
 ## Tools and Technologies
 
 * Python
@@ -54,18 +60,22 @@ The occupancy proxy is calculated using unavailable days divided by total calend
 * Matplotlib
 * SciPy
 * Statsmodels
+* Power BI
 * GitHub
+* GitHub Desktop
 
 ## Repository Structure
 
 ```text
 .
+├── dashboard/
+│   └── inside_airbnb_market_dashboard.pbix
 ├── data/
 │   ├── raw/                 # Raw dataset files, not committed
-│   └── processed/           # Processed outputs, not committed
+│   └── processed/           # Processed analytical outputs
 ├── outputs/
-│   ├── figures/             # Generated charts
-│   └── tables/              # Profiling, quality, SQL, and statistics outputs
+│   ├── figures/             # Generated charts and Power BI dashboard screenshots
+│   └── tables/              # Profiling, quality, SQL, statistics, and Power BI export outputs
 ├── reports/
 │   ├── final_report.md
 │   ├── ai_usage_disclosure.md
@@ -82,7 +92,8 @@ The occupancy proxy is calculated using unavailable days divided by total calend
 │   ├── quality_checks.py
 │   ├── run_analysis.py
 │   ├── generate_visuals.py
-│   └── statistical_analysis.py
+│   ├── statistical_analysis.py
+│   └── export_powerbi_data.py
 ├── main.py
 ├── requirements.txt
 └── README.md
@@ -137,6 +148,19 @@ This runs the full workflow:
 6. SQL market analysis
 7. Visualization generation
 8. Statistical analysis
+9. Power BI dataset export
+
+The pipeline also exports curated datasets for the Power BI dashboard into:
+
+```text
+outputs/tables/powerbi/
+```
+
+To export only the Power BI dashboard datasets, run:
+
+```bash
+python src/export_powerbi_data.py
+```
 
 ## Main Outputs
 
@@ -178,6 +202,36 @@ This runs the full workflow:
 * `outputs/tables/statistics/room_type_statistical_summary.csv`
 * `outputs/tables/statistics/superhost_statistical_summary.csv`
 
+### Power BI Dashboard
+
+The project includes an optional three-page Power BI dashboard built from curated pipeline outputs.
+
+Dashboard file:
+
+* `dashboard/inside_airbnb_market_dashboard.pbix`
+
+Dashboard screenshots:
+
+* `outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png`
+* `outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png`
+* `outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png`
+
+The Power BI dashboard uses the following curated export files:
+
+* `outputs/tables/powerbi/listing_master_powerbi.csv`
+* `outputs/tables/powerbi/data_quality_checks_powerbi.csv`
+
+Dashboard pages:
+
+1. **Executive Market Overview**
+   Summarizes total listings, hosts, neighbourhoods, average price, availability rate, occupancy proxy, room type distribution, room type pricing, and top neighbourhoods by supply and average price.
+
+2. **Demand, Revenue Proxy & Host Insights**
+   Highlights estimated revenue proxy, review activity, host portfolio segments, and neighbourhood-level demand signals.
+
+3. **Data Quality & Pipeline Monitoring**
+   Shows data quality checks, missing price records, review availability, warning checks, and documented dataset limitations.
+
 ## Data Model
 
 The project creates a DuckDB analytical model with the following tables:
@@ -192,12 +246,14 @@ This structure separates descriptive entities from analytical metrics and suppor
 
 ## Key Findings
 
-* The selected market contains 10,480 listings and 9,201 hosts.
+* The selected Amsterdam market contains 10,480 listings and 9,201 hosts.
 * Entire home/apartment listings dominate the market supply.
 * Average availability rate is approximately 25.77%.
 * Occupancy proxy is approximately 74.23%, but this should be interpreted carefully due to calendar data limitations.
 * Calendar-level prices were unavailable, so price analysis was based on listing-level price only.
 * Data quality checks found no duplicate listing IDs, no invalid coordinates, and no non-positive listing prices.
+* Missing listing prices and missing calendar-level prices were documented as known data limitations.
+* Power BI dashboard outputs summarize market overview, demand/revenue proxy signals, host behaviour, and data quality monitoring.
 
 ## Completed Work
 
@@ -212,6 +268,12 @@ This structure separates descriptive entities from analytical metrics and suppor
 * Data quality checks
 * EDA visualizations
 * Statistical hypothesis tests
+* Curated Power BI dashboard dataset export
+* Three-page Power BI dashboard creation
+* Executive market overview dashboard page
+* Demand, revenue proxy, and host insights dashboard page
+* Data quality and pipeline monitoring dashboard page
+* Dashboard screenshots saved for repository review
 * Reproducible full pipeline runner
 
 ## Incomplete or De-scoped Work
@@ -223,6 +285,8 @@ The following areas were intentionally not completed due to prioritization and d
 * Multi-city comparison, because the project prioritized depth over breadth.
 * Machine learning price prediction, because the submission focused on data engineering quality, SQL analysis, data quality, and statistical interpretation.
 * LLM/RAG experiments, because they were optional and outside the selected scope.
+* Cloud deployment, because the project was designed as a local reproducible assessment workflow.
+* Docker containerization, because reproducibility was handled through `requirements.txt`, structured scripts, and `python main.py`.
 
 ## AI Usage Disclosure
 
@@ -236,4 +300,5 @@ reports/ai_usage_disclosure.md
 
 ## Author
 
+**Oshan Rajakaruna**  
 Data Engineer Intern Technical Assessment Submission

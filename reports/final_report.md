@@ -8,7 +8,7 @@
 
 **Dataset:** Inside Airbnb Public Dataset – Amsterdam, North Holland, The Netherlands
 
-**Submission Format:** GitHub Repository + PDF Report
+**Submission Format:** GitHub Repository + PDF Report + Optional Power BI Dashboard
 
 ---
 
@@ -22,7 +22,7 @@
 6. Data Quality Findings
 7. Data Model
 8. SQL Analysis Findings
-9. Exploratory Data Analysis Findings
+9. Exploratory Data Analysis Findings and Power BI Dashboard
 10. Statistical Findings
 11. Business Recommendations
 12. Limitations and Caveats
@@ -47,6 +47,8 @@ A complete Python-based pipeline was implemented to validate raw files, profile 
 python main.py
 ```
 
+A three-page Power BI dashboard was also created using curated pipeline outputs. The dashboard provides an executive market overview, demand/revenue proxy and host insights, and a data quality and pipeline monitoring view for stakeholder-friendly exploration.
+
 The analysis found that the market is strongly dominated by entire-home/apartment listings, with 8,561 out of 10,480 listings belonging to this room type. The average availability rate across listings was approximately 25.77%, while the calculated occupancy proxy was approximately 74.23%. These values should be interpreted carefully because unavailable calendar days may represent booked nights, blocked dates, maintenance periods, or host restrictions.
 
 A key data limitation was discovered during profiling: calendar-level price values were unavailable. Because of this, daily price analysis, weekend-versus-weekday price comparisons, and seasonal price trend analysis were intentionally de-scoped. Listing-level price from the listings dataset was used for price analysis, while calendar data was used only for availability and occupancy proxy calculations.
@@ -70,6 +72,8 @@ The main objectives of this project were to:
 * Run SQL-based market analysis.
 * Generate visualizations for business storytelling.
 * Perform statistical tests to support analytical findings.
+* Export curated datasets for Power BI dashboarding.
+* Create a Power BI dashboard for business stakeholder exploration.
 * Document data limitations, assumptions, decisions, and de-scoped work.
 * Provide a reproducible workflow with clear execution instructions.
 
@@ -85,6 +89,7 @@ The assignment was intentionally broad, covering data engineering, exploratory a
 * SQL analysis
 * EDA visualizations
 * Statistical testing
+* Power BI dashboarding
 * Documentation and reproducibility
 
 The Amsterdam dataset was selected as the single-city scope instead of analyzing multiple cities. This decision was made to prioritize quality, technical depth, reproducibility, and clear reasoning. Multi-city analysis was considered but intentionally de-scoped to avoid shallow implementation and to focus on building a strong end-to-end pipeline.
@@ -202,7 +207,8 @@ The project followed a structured data engineering workflow:
 8. Run SQL analysis.
 9. Generate EDA visualizations.
 10. Perform statistical hypothesis testing.
-11. Document assumptions, limitations, decisions, and results.
+11. Export curated datasets for Power BI dashboarding.
+12. Document assumptions, limitations, decisions, and results.
 
 ## 4.2 Pipeline Flow
 
@@ -227,9 +233,9 @@ Dimensional Model
         ↓
 SQL Analysis
         ↓
-Visualizations and Statistical Tests
+Visualizations, Statistical Tests, and Power BI Export
         ↓
-Business Findings and Recommendations
+Business Dashboard and Final Findings
 ```
 
 ## 4.3 Tools Used
@@ -243,6 +249,7 @@ Business Findings and Recommendations
 | SQL        | Market analysis and data quality checks                   |
 | Matplotlib | Visualization generation                                  |
 | SciPy      | Statistical hypothesis testing                            |
+| Power BI   | Business intelligence dashboarding                        |
 | GitHub     | Version control and submission repository                 |
 
 ## 4.4 Reproducibility
@@ -253,7 +260,7 @@ The full project can be reproduced by installing the dependencies, placing the r
 python main.py
 ```
 
-The pipeline regenerates profiling outputs, processed files, DuckDB tables, quality checks, SQL results, visualizations, and statistical outputs.
+The pipeline regenerates profiling outputs, processed files, DuckDB tables, quality checks, SQL results, visualizations, statistical outputs, and curated Power BI export datasets.
 
 ---
 
@@ -265,6 +272,8 @@ The repository was organized to separate raw data, processed data, source code, 
 
 ```text
 .
+├── dashboard/
+│   └── inside_airbnb_market_dashboard.pbix
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -274,12 +283,21 @@ The repository was organized to separate raw data, processed data, source code, 
 ├── reports/
 ├── sql/
 ├── src/
+│   ├── extract.py
+│   ├── profile_data.py
+│   ├── transform.py
+│   ├── load.py
+│   ├── quality_checks.py
+│   ├── run_analysis.py
+│   ├── generate_visuals.py
+│   ├── statistical_analysis.py
+│   └── export_powerbi_data.py
 ├── main.py
 ├── requirements.txt
 └── README.md
 ```
 
-Raw and processed datasets were excluded from Git because they can be regenerated using the pipeline and may increase repository size. Small output summaries and figures were committed to help reviewers quickly inspect results.
+Raw and processed datasets were excluded from Git because they can be regenerated using the pipeline and may increase repository size. Small output summaries, generated figures, Power BI screenshots, and the Power BI dashboard file were included to help reviewers quickly inspect results.
 
 ## 5.2 Raw File Validation
 
@@ -383,8 +401,22 @@ The `main.py` script runs the full workflow in the correct order:
 6. SQL market analysis
 7. EDA visual generation
 8. Statistical analysis
+9. Power BI dataset export
 
 This provides a reproducible pipeline that can be executed with a single command.
+
+## 5.10 Power BI Dataset Export
+
+The `export_powerbi_data.py` script creates curated CSV files specifically for Power BI dashboarding. These files are generated from the cleaned pipeline outputs rather than from raw data files.
+
+The Power BI export outputs are:
+
+```text
+outputs/tables/powerbi/listing_master_powerbi.csv
+outputs/tables/powerbi/data_quality_checks_powerbi.csv
+```
+
+This approach keeps the dashboard connected to the reproducible data engineering workflow and avoids manually preparing dashboard data outside the pipeline.
 
 ---
 
@@ -660,6 +692,44 @@ Neighbourhoods with higher estimated revenue proxy may combine higher listing pr
 
 ---
 
+## 9.8 Power BI Dashboard Summary
+
+A three-page Power BI dashboard was created as an optional business intelligence layer on top of the cleaned and curated pipeline outputs. The dashboard was designed to make the analysis easier for non-technical stakeholders to explore while still preserving the data quality limitations identified during the engineering workflow.
+
+The dashboard uses the curated Power BI datasets generated by the pipeline:
+
+```text
+outputs/tables/powerbi/listing_master_powerbi.csv
+outputs/tables/powerbi/data_quality_checks_powerbi.csv
+```
+
+The dashboard includes the following pages:
+
+1. **Executive Market Overview**  
+   This page summarizes the Amsterdam Airbnb market using KPI cards and visualizations for listing count, host count, neighbourhood count, average price, availability rate, occupancy proxy, room type distribution, median price by room type, and top neighbourhoods by supply and average price.
+
+2. **Demand, Revenue Proxy & Host Insights**  
+   This page focuses on demand and host behaviour. It includes estimated revenue proxy, review activity by neighbourhood, host portfolio segments, and supporting notes explaining that estimated revenue proxy should not be interpreted as actual confirmed revenue.
+
+3. **Data Quality & Pipeline Monitoring**  
+   This page highlights data quality check results, missing price records, review availability, quality check status, and documented dataset limitations. This page was included to show that the analysis is supported by validation and transparency, not only visual reporting.
+
+The Power BI dashboard file is available in:
+
+```text
+dashboard/inside_airbnb_market_dashboard.pbix
+```
+
+Dashboard screenshots are available in:
+
+```text
+outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png
+outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png
+outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png
+```
+
+---
+
 # 10. Statistical Findings
 
 ## 10.1 Purpose of Statistical Testing
@@ -685,6 +755,8 @@ The project tested four hypotheses:
 | Neighbourhood price difference | Do listing prices differ across neighbourhoods?                                                                 | Kruskal-Wallis H test |
 
 ## 10.3 Statistical Results Summary
+
+Replace the `[TO FILL]` values below using the generated `outputs/tables/statistics/statistical_tests.csv` file before final PDF export.
 
 | Test | Method | p-value | Effect Size | Interpretation |
 |---|---|---:|---:|---|
@@ -860,18 +932,15 @@ The current project uses an estimated revenue proxy. A stronger revenue model wo
 
 Without these fields, exact revenue should not be claimed.
 
-## 13.5 Dashboard Extension
+## 13.5 Dashboard Improvements
 
-A Power BI dashboard could be added to allow interactive exploration of:
+A Power BI dashboard was created as part of the final submission. Future dashboard improvements could include:
 
-* Room type distribution
-* Price by neighbourhood
-* Availability by neighbourhood
-* Review activity
-* Host concentration
-* Data quality checks
-
-This would make the output easier for business stakeholders to explore.
+* Adding drill-through pages for individual neighbourhoods.
+* Adding map-based exploration using latitude and longitude.
+* Adding tooltip pages for listing-level details.
+* Adding month-level trend analysis if reliable calendar-level price data becomes available.
+* Publishing the dashboard to Power BI Service for browser-based stakeholder access.
 
 ## 13.6 Machine Learning Extension
 
@@ -900,6 +969,8 @@ The most important trade-off was selecting one city instead of multiple cities. 
 
 Another important decision was to de-scope machine learning and LLM/RAG experiments. These were optional areas, and implementing them superficially would have reduced the quality of the core data engineering submission. Instead, the project focused on building a clean, explainable, and reproducible analytical workflow.
 
+After the core pipeline was completed, a Power BI dashboard was added as an optional stakeholder-facing layer. This was done to show how curated data engineering outputs can be converted into business intelligence views without bypassing the reproducible pipeline.
+
 ---
 
 # 15. Completed Work Summary
@@ -920,6 +991,10 @@ The following work was completed:
 * Exported market analysis result tables.
 * Generated EDA visualizations.
 * Performed statistical hypothesis tests.
+* Exported curated Power BI datasets from the pipeline.
+* Created a three-page Power BI dashboard.
+* Added dashboard pages for executive market overview, demand and revenue proxy insights, and data quality monitoring.
+* Saved dashboard screenshots for repository review.
 * Created a reproducible full pipeline using `python main.py`.
 * Wrote README documentation.
 * Wrote engineering decision log.
@@ -1045,7 +1120,17 @@ Key outputs are available in:
 outputs/tables/
 outputs/tables/analysis/
 outputs/tables/statistics/
+outputs/tables/powerbi/
 outputs/figures/
+dashboard/inside_airbnb_market_dashboard.pbix
+```
+
+Power BI dashboard screenshots:
+
+```text
+outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png
+outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png
+outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png
 ```
 
 ---
