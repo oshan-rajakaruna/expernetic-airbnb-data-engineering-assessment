@@ -189,12 +189,36 @@ python src/export_powerbi_data.py
 
 ### Visualizations
 
-* `outputs/figures/01_listing_count_by_room_type.png`
-* `outputs/figures/02_average_price_by_room_type.png`
-* `outputs/figures/03_top_neighbourhoods_by_average_price.png`
-* `outputs/figures/04_top_neighbourhoods_by_listing_supply.png`
-* `outputs/figures/05_review_activity_by_neighbourhood.png`
-* `outputs/figures/06_revenue_proxy_by_neighbourhood.png`
+The pipeline generates Python-based EDA charts and saves them in `outputs/figures/`.
+
+<details>
+<summary>View Python-generated EDA charts</summary>
+
+#### Listing Count by Room Type
+
+![Listing Count by Room Type](outputs/figures/01_listing_count_by_room_type.png)
+
+#### Average Price by Room Type
+
+![Average Price by Room Type](outputs/figures/02_average_price_by_room_type.png)
+
+#### Top Neighbourhoods by Average Price
+
+![Top Neighbourhoods by Average Price](outputs/figures/03_top_neighbourhoods_by_average_price.png)
+
+#### Top Neighbourhoods by Listing Supply
+
+![Top Neighbourhoods by Listing Supply](outputs/figures/04_top_neighbourhoods_by_listing_supply.png)
+
+#### Review Activity by Neighbourhood
+
+![Review Activity by Neighbourhood](outputs/figures/05_review_activity_by_neighbourhood.png)
+
+#### Estimated Revenue Proxy by Neighbourhood
+
+![Estimated Revenue Proxy by Neighbourhood](outputs/figures/06_revenue_proxy_by_neighbourhood.png)
+
+</details>
 
 ### Statistical Analysis
 
@@ -212,9 +236,17 @@ Dashboard file:
 
 Dashboard screenshots:
 
-* `outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png`
-* `outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png`
-* `outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png`
+#### Page 1: Executive Market Overview
+
+![Power BI Dashboard Page 1 - Executive Overview](outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png)
+
+#### Page 2: Demand, Revenue Proxy & Host Insights
+
+![Power BI Dashboard Page 2 - Demand, Revenue Proxy & Host Insights](outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png)
+
+#### Page 3: Data Quality & Pipeline Monitoring
+
+![Power BI Dashboard Page 3 - Data Quality & Pipeline Monitoring](outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png)
 
 The Power BI dashboard uses the following curated export files:
 
