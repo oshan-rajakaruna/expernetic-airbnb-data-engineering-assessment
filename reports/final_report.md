@@ -703,32 +703,30 @@ outputs/tables/powerbi/listing_master_powerbi.csv
 outputs/tables/powerbi/data_quality_checks_powerbi.csv
 ```
 
-The dashboard includes the following pages:
-
-1. **Executive Market Overview**  
-   This page summarizes the Amsterdam Airbnb market using KPI cards and visualizations for listing count, host count, neighbourhood count, average price, availability rate, occupancy proxy, room type distribution, median price by room type, and top neighbourhoods by supply and average price.
-
-2. **Demand, Revenue Proxy & Host Insights**  
-   This page focuses on demand and host behaviour. It includes estimated revenue proxy, review activity by neighbourhood, host portfolio segments, and supporting notes explaining that estimated revenue proxy should not be interpreted as actual confirmed revenue.
-
-3. **Data Quality & Pipeline Monitoring**  
-   This page highlights data quality check results, missing price records, review availability, quality check status, and documented dataset limitations. This page was included to show that the analysis is supported by validation and transparency, not only visual reporting.
-
 The Power BI dashboard file is available in:
 
 ```text
 dashboard/inside_airbnb_market_dashboard.pbix
 ```
 
-Dashboard screenshots are available in:
+### Page 1: Executive Market Overview
 
-```text
-outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png
-outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png
-outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png
-```
+This page summarizes the Amsterdam Airbnb market using KPI cards and visualizations for listing count, host count, neighbourhood count, average price, availability rate, occupancy proxy, room type distribution, median price by room type, and top neighbourhoods by supply and average price.
 
----
+<img src="../outputs/figures/powerbi_dashboard_page_1_Executive_Overview.png" width="850">
+
+### Page 2: Demand, Revenue Proxy & Host Insights
+
+This page focuses on demand and host behaviour. It includes estimated revenue proxy, review activity by neighbourhood, host portfolio segments, and supporting notes explaining that estimated revenue proxy should not be interpreted as actual confirmed revenue.
+
+<img src="../outputs/figures/powerbi_dashboard_page_2_Demand,Revenue_Proxy_And_HostInsights.png" width="850">
+
+### Page 3: Data Quality & Pipeline Monitoring
+
+This page highlights data quality check results, missing price records, review availability, quality check status, and documented dataset limitations. This page was included to show that the analysis is supported by validation and transparency, not only visual reporting.
+
+<img src="../outputs/figures/powerbi_dashboard_page_3_Data_Quality_And_Pipeline.png" width="850">
+
 
 # 10. Statistical Findings
 
